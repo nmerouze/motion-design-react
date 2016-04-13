@@ -1,0 +1,105 @@
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 264px;
+  margin: 0 auto;
+
+  position: relative;
+
+  background: #ddeff2;
+}
+
+.btn {
+  font-size: 16px;
+
+  width: 240px;
+  margin: 12px;
+  padding: 12px;
+
+  position: absolute;
+  bottom: 0;
+
+  background: #81b2c0;
+  border-width: 0;
+  color: #fff;
+}
+
+.list {
+  width: 240px;
+  margin-bottom: 48px;
+  padding: 12px;
+
+  overflow-y: auto;
+}
+
+.list__item {
+  height: 72px;
+  width: 240px;
+  margin-bottom: 12px;
+
+  text-align: center;
+
+  background: #81b2c0;
+}
+
+.list__item--enter {
+  animation-name: add-item;
+  animation-duration: 500ms;
+}
+
+.list__item--leave {
+  background: #bf4a3c;
+  animation-name: remove-item;
+  animation-duration: 520ms;
+}
+
+.list__item--move {
+  position: relative;
+  animation-name: move-item;
+  animation-delay: 500ms;
+  animation-duration: 220ms;
+}
+
+@keyframes add-item {
+  from {
+    transform: scale(0, 0);
+  }
+
+  75% {
+    transform: scale(1.1, 1.1);
+  }
+
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes remove-item {
+  from {
+    transform: scale(1, 1);
+  }
+
+  25% {
+    transform: scale(1.1, 1.1);
+  }
+
+  to {
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes move-item {
+  85% {
+    transform: translateY(-90px);
+  }
+
+  to {
+    transform: translateY(-84px);
+  }
+}
